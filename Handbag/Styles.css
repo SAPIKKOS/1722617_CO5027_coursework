@@ -1,0 +1,59 @@
+﻿* {
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+body {
+    background-color: black;
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+
+
+
+
+.error {
+    color: Red;
+}
+
+.errorMessages {
+    border: 1px solid red;
+    color: Red;
+    background-color: #FFCCCC;
+    margin-bottom: 5px;
+}
+
+
+#content {
+    margin: 0px;
+    width: 90%;
+    float: none;
+    background-color: blue;
+}
+
+a, a:visited {
+    color: black;
+}
+
+
+
+
+/*The style below will apply to the element with an
+id of "header" */
+#header {
+    background-color: black;
+}
+
+.nav {
+    text-align: center;
+}
+
+    .nav a {
+        color: white;

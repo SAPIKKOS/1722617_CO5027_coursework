@@ -5,46 +5,33 @@
 
     <br />
     <br />
-         <table style="width:100%; height: 100%;">
-  <tr>
-    <td style="text-align:center;"> <a href="Product.aspx"><img src="Image/Armani code.jpg" height="100" width="200"></a> 
-        <h2 style="text-align:center;"> Armani Code </h2>
-         </td>
-    <td style="text-align:center;"> <img src="Image/chanel.jpg" height="100" width="200"> 
-        <h2 style="text-align:center;"> Deu Chanel </h2>
-   </td>
-    <td style="text-align:center;"> <img src="Image/coach.jpg" height="100" width="200"> 
-        <h2 style="text-align:center;"> Coach </h2>
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align:center;"><img src="Image/Gucci Oud.jpg" height="100" width="200">
-         <h2 style="text-align:center;"> Gucci Oud </h2>
-    </td>
-       
-    <td style="text-align:center;"><img src="Image/Hugo Boss.jpg" height="100" width="200">
-          <h2 style="text-align:center;"> Hugo Boss </h2>
-    </td>
-       
-    <td style="text-align:center;"><img src="Image/one million.jpg" height="100" width="200">
-         <h2 style="text-align:center;"> One Million Silver </h2>
-    </td>
-       
-     </tr>
-             <tr>
-      <td style="text-align:center;"><img src="Image/sauvage.jpg" height="100" width="200">
-         <h2 style="text-align:center;"> Dior Sauvage </h2>
-    </td>
+        
+ 
 
-      <td style="text-align:center;"><img src="Image/van cleef& arpel.jpg" height="100" width="200">
-         <h2 style="text-align:center;"> Van Cleef & Arpel </h2>
-    </td>
+  
+<asp:SqlDataSource ID="Repeater" runat="server" ConnectionString="<%$ ConnectionStrings:IdentityConnectionString %>" SelectCommand="SELECT * FROM [Table]"></asp:SqlDataSource>
 
-      <td style="text-align:center;"><img src="Image/versace.jpg" height="100" width="200">
-         <h2 style="text-align:center;"> Versace </h2>
-    </td>
+   <asp:Repeater ID="ProductList" runat="server" DataSourceID="Repeater">
+      
+        <HeaderTemplate><ul></HeaderTemplate>
+                <ItemTemplate>
+        
+        <ul class="repeater">
+        <li>
+            <asp:Image ID="image" runat="server" width="220" height="230" ImageUrl='<%#"~/Image/" + Eval("ID")+ ".jpg"%>'  AlternateText='<%#Eval("Product_Name") %>' ToolTip='<%#Eval("Product_Name") %>' />
+                <p><a href="<%#Eval("ID","Product.aspx?Id={0}") %>"><%#Eval("Product_Name") %></a></p>
+                <p>Desripction:<%#Eval("Description") %></p>
+                <p>Quantity:<%#Eval("Quantity") %></p>
+                <p>Price:<%#Eval("Price") %></p>
+        </li>
+    </ul>
+                    </ItemTemplate>
+                <FooterTemplate></ul></FooterTemplate>
 
-  </tr>
-  </table>
 
+    </asp:Repeater>
+         
 </asp:Content>
+
+         
+

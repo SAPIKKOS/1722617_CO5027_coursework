@@ -24,7 +24,7 @@ namespace Handbag
 
             //for simple configuration, specify the account password and recipient here also
             const string accountPassword = "syafiq801";
-            const string recipientEmail = "melabau_22@hotmail.com";
+            const string recipientEmail = "syafiq.dabed@gmail.com";
 
             //create a new smtp client (this will connect to the mail server)
             SmtpClient client = new SmtpClient();
@@ -47,7 +47,8 @@ namespace Handbag
 
             //set the subject of the message, and set the body using the text from a text box
             msg.Subject = "A new email from the website";
-            msg.Body = txtBody.Text;
+
+            msg.Body = "From:" + txtEmail.Text + "\n" + "Subject:" + txtSubject.Text + "\n" + "Message:" + txtBody.Text;
 
             //at this stage the body of the email only contains what the user has typed in the message box
             //there's nothing that collects their name and email address (which are required to reply to them)
@@ -61,5 +62,6 @@ namespace Handbag
             //or by redirecting them to a 'Message sent' page
             txtBody.Text = "";
         }
+
     }
 }
